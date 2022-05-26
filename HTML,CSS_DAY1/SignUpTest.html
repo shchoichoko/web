@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    .first{
+
+    }
+
+  </style>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<form action="#">
+
+
+<table border="1" width="550px">
+  <tr>
+    <td><input type="text" placeholder="이름" size="68" required ></td>
+  </tr>
+  <tr>
+    <td><input type="text" placeholder="아이디" size="68" required></td>
+  </tr>
+  <tr>
+    <td><input type="password" placeholder="비밀번호" size="68" required></td>
+  </tr>
+  <tr>
+    <td><input type="password" placeholder="비밀번호 재입력" size="68" required></td>
+  </tr>
+  <tr>
+    <td>
+      <select name="phoneNumber" id="phoneNumber" required>
+        <option value="" disabled selected>휴대폰 번호 선택</option>
+        <option value="010">010</option>
+        <option value="011">011</option>
+        <option value="017">017</option>
+      </select>
+      - <input type="text" size="21"> - <input type="text" size="20">
+    </td>
+  </tr>
+  <tr>
+    <td><input type="email" placeholder="이메일" required> @ 
+      <select name="email" id="email">
+        <option value="" disabled selected>선택</option>
+        <option value="naver">naver.com</option>
+        <option value="daum">daum.net</option>
+        <option value="google">gmail.com</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="text" placeholder="우편번호"> <a href="https://www.juso.go.kr/openIndexPage.do" target="_blank"><input type="button" value="주소찾기"></a>
+    </td>
+  </tr>
+</table>
+<br>
+<table border="0" width="550px">
+  <tr>
+    <td colspan="2">성별</td>
+    <td>
+      <input type="radio" id="male" name="sex" value="male" required checked>
+      <label for="male">남성</label>
+      <input type="radio" id="female" name="sex" value="female">
+      <label for="female">여성</label><br>  
+    </td>
+  </tr>
+</table>
+<br>
+<table>
+  <tr>
+    <td>
+      <input type="submit" value="가입 신청" style="background-color: #6A5ACD;">
+    </td>
+    <td>
+      <a href="https://www.naver.com">
+      <input type="button" value="뒤로 가기">
+      </a>
+    </td>
+  </tr>
+</table>
+
+</form>
+</body>
+</html>
