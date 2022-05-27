@@ -2,7 +2,7 @@
 - 홈페이지 : https://shchoichoko.github.io/web/
 
 
-<img src="java.svg"/>
+<img src="1.png"/>
 <img src="https://img.shields.io/badge/-C%20%EC%96%B8%EC%96%B4-lightgrey"/>
 <img src="https://img.shields.io/badge/-LINUX-critical"/>
 <img src="https://img.shields.io/badge/-Github-informational"/>
