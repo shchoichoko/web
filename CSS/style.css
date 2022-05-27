@@ -2,45 +2,41 @@ div {
   background-color: aqua;
   height: 300px;
 }
-
 body {
   background-color: black;
   font-family: 'Noto Sans KR', sans-serif;
 }
-
 p {
   color: blue;
 }
-
 /* class 셀렉터 */
 .red-text {
   color: red;
+  text-decoration: overline;
+  /* text-transform: uppercase; */
 }
 
 .yellow-text {
   color: yellow;
+  text-decoration: underline;
+  /* text-transform: lowercase; */
 }
-
 .big-size {
   font-size: 50px;
 }
-
 .border {
   border-style: dashed;
   border-width: 5px;
   border-color: yellow;
 }
-
 /* 아이디 셀렉터 */
 #div1 {
   background-color: tomato;
 }
-
 a {
   text-decoration: none;
   color: grey;
 }
-
 a:hover {
   color: white;
 }
