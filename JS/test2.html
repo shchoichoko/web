@@ -12,7 +12,7 @@
   <script>
     let repeat = true;// 반복문에서 탈출하는 용도.
     while (repeat) {
-      let num = prompt();//입력받기
+      let num = prompt('입력');//입력받기
       if (!isNaN(num)) {//isNaN() 숫자가 아닐경우 true , 숫자일경우 false를 반환함.
         if (1 <= num && 100 >= num) {
           for (let i = 1; i < 101; i++) {
