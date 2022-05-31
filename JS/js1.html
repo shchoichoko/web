@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <button onclick="greeting()">인사</button>
+  <script>
+    function myFunc(num){
+      console.log(num);
+    }
+    //상수
+    const NUM = 10;
+    //var선언은 중복으로 선언해도 에러가 발생하지 않는다.
+    var i = 10;
+    i = 20;
+    // let i = 10;
+    console.log(i);
+    let num =10;
+    let text = 'hello';//숫자와 문자열의 외형 상의 차이점은 없음.
+
+    //문자열 병합
+    let name = '최수혁';
+    let age = 32;
+    let result = name + '는' + age + '살입니다.';
+    result = `${name}는 ${age}살입니다.`;
+
+    let items = [1, 2, 3, 4];
+    for(let i = 1; i < items.length; i++) {
+      console.log(items[i]);
+
+    }
+
+    for(let item in items) {
+      console.log(item);
+    }
+
+    //Object, JSON
+    let person = {
+      name: '최수혁',
+      age: 32
+    };
+    console.log(person);
+
+    
+
+
+
+  </script>
+
+</body>
+</html>
