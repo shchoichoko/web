@@ -8,7 +8,7 @@
 </head>
 <body>
   <style>
-    #firstBox{
+    .boxes{
       display: inline-block;
       width: 150px;
       height: 70px;
@@ -18,28 +18,7 @@
       background-color: gray;
       font-size: 25px;
     }
-    #secondBox{
-
-      display: inline-block;
-      width: 150px;
-      height: 70px;
-      text-align: center;
-      line-height: 70px;
-      color: white;
-      background-color: gray;
-      font-size: 25px;
-    }
-    #thirdBox{
-
-      display: inline-block;
-      width: 150px;
-      height: 70px;
-      text-align: center;
-      line-height: 70px;
-      color: white;
-      background-color: gray;
-      font-size: 25px;
-    }
+    
   </style>
   <script>
     function firstWhite(){
@@ -80,8 +59,8 @@
     }
   </script>
 
-  <div id="firstBox" onclick="firstWhite()">html</div>
-  <div id="secondBox" onclick="secondWhite()">css</div>
-  <div id="thirdBox" onclick="thirdWhite()">javascript</div>
+  <div id="firstBox" class="boxes" onclick="firstWhite()">html</div>
+  <div id="secondBox" class="boxes" onclick="secondWhite()">css</div>
+  <div id="thirdBox" class="boxes" onclick="thirdWhite()">javascript</div>
 </body>
 </html>

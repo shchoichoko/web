@@ -13,10 +13,10 @@
     var test2 = "";
     while (true) {
       test2 = prompt('입력해주세요');
-      if (test2 == "") {    //  ==과 ===의 차이. ===은 타입까지 비교한다.
+      if (test2 == ""||test2 == null) {    //  ==과 ===의 차이. ===은 타입까지 비교한다.
         alert("비어있음");
       }
-      if (test2 != "") {
+      else{
         console.log(name);
         alert(`${test2} 님 안녕하세요.`);
         break;
