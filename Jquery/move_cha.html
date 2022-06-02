@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+<style>
+  #container {
+    position: absolute;
+    display: inline-block;
+    width: 600px;
+    height: 600px;
+    border: 1px black solid;
+    left:0px;
+    top: 50px;
+    margin-left: 35%;
+  }
+
+  #character {
+    position: relative;
+    left: 0px;
+
+  }
+
+</style>
+  <div id="container">
+    <img src="../assets/liz2.gif" id="character" alt="" width="200px" height="200px">
+  </div>
+  <script>
+    let $pokemon = $('#character');
+    const GAME_WIDTH = 600;
+    const GAME_HEIGHT = 600;
+
+    const MOVE = 25;
+    const CHARACTER_HEIGHT = 100;
+    const CHARACTER_WIDTH = 100;
+
+    $('body').keydown(function(event){
+      let top = Number($pokemon.css('top').replace('px',''));
+      let bottom = top + CHARACTER_HEIGHT;
+      let left = Number($pokemon.css('left').replace('px',''));
+      let right = left + CHARACTER_WIDTH;
+
+      switch(event.key){
+
+        case 'ArrowUp' :
+          if(top - MOVE < 0){
+            return;
+          }
+          $pokemon.css({top: '-=25px'});
+          break;
+
+        case 'ArrowDown' :
+          if(bottom + MOVE > GAME_HEIGHT - 100){
+            return;
+          }
+          $pokemon.css({top: '+=25px'});
+          break; 
+
+        case 'ArrowLeft' :
+          if(left - MOVE < 0){
+            return;
+          }
+          $pokemon.css({left: '-=25px'});
+          break;     
+
+        case 'ArrowRight' :
+        if(right + MOVE > GAME_WIDTH - 100){
+            return;
+          }
+          $pokemon.css({left: '+=25px'});
+          break;
+      }
+
+    });
+  </script>
+</body>
+</html>

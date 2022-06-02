@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <style>
+    button {
+      width: 100px;
+    }
+  </style>
+  <table border="1">
+    <tr>
+      <td>아이디</td>
+      <td colspan="2"><input type="text" name="" id="id"></td>
+    </tr>
+    <tr>
+      <td>비밀번호</td>
+      <td colspan="2"><input type="password" name="" id="pw"></td>
+    </tr>
+    <tr>
+      <td>성별</td>
+      <td><input type="radio" name="" id="male" value="남자">남자</td>
+      <td><input type="radio" name="" id="female" value="여자">여자</td>
+    </tr>
+    <tr>
+      <td>직업</td>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td>취미</td>
+      <td colspan="2"><input type="checkbox" name="chk" id="hobby">개발
+        <input type="checkbox" name="chk" id="hobby" checked>게임
+        <input type="checkbox" name="chk" id="hobby">낚시
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td colspan="2"><input type="checkbox" name="chk" id="hobby">운동
+        <input type="checkbox" name="chk" id="hobby">독서
+        <input type="checkbox" name="chk" id="hobby">음악감상
+      </td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td><button id="button1">취소</button></td>
+      <td><button id="button2">회원가입</button></td>
+    </tr>
+  </table>
+  <script>
+    let checkedSize = 0;
+    $('#button2').click(function(){
+      if ($('input:checkbox[name=chk]:checked').length < 3) {
+        alert('취미는 3개 이상 선택해야 합니다.')
+      }
+    })
+
+    $(function () {
+
+
+    })
+  </script>
+</body>
+
+</html>
