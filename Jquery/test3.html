@@ -43,7 +43,8 @@
     function changeStyle($el) {
       console.log($el);
 
-      $divs = document.querySelectorAll('div');
+      // $divs = document.querySelectorAll('div');
+      $divs = $('div');
 
       for (let i = 0; i < $divs.length; i++) {
         $divs[i].className = $divs[i] === $el ? 'selected-box' : 'box';
