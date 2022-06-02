@@ -55,32 +55,35 @@
         console.log('클릭1!!');
       });
 
-      //메서드 체인 - 연쇄적으로 여러 기능들을 붙여서 사용할 수 있음.
-      $('#button2').click(function(){
-        console.log('Jquery 클릭 2');
-      }).mouseover(function(){
-        console.log('Jquery 마우스 오버');
+      // 메서드 체인
+      $('#button2').click(function () {
+        console.log('JQuery 클릭 2');
+      }).mouseover(function () {
+        console.log('JQuery 마우스 오버 2');
       }).mouseleave(function () {
-        console.log('Jquery 마우스 떠나기');
-      })
-
-      $('#button3').click(function(){
-        $('#text').html('<b>b태그</b>');
-        // $('#text').text
+        console.log('JQuery 마우스 떠나기 2');
       });
 
-      $('#button4').click(function(){
-        $('#text2').append('<b>b태그</b>');
-        // $('#text').text
+      $('#button3').click(function () {
+        // innerHTML, innerText 에 대응
+        // $('#text').html('<b>b 태그</b>');
+        $('#text').text('<b>b 태그</b>');
       });
-      
-      $('#text3').mouseover(function(){
-        console.log(this);// js로 얻은 tag 정보
-        console.log($(this)); //jQuery 객체로 변경
 
-       // $(this).attr('class','color-red'); //클래스 이름 변경
-        //css 변경하기
-        $(this).css('color','red');
+      $('#button4').click(function () {
+        $('#text2').append('<b>b 태그</b>')
+          .append(' Hello');
+      });
+
+      $('#text3').mouseover(function () {
+        console.log(this);  // this: js로 얻었던 tag 정보
+        console.log($(this));   // jquery 객체로 변경
+
+        // 속성 변경
+        // $(this).attr('class', 'color-red');
+
+        // css 변경
+        $(this).css('color', 'red');
       })
 
      
