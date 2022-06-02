@@ -97,10 +97,6 @@
       if($('input:checkbox[name=chk]:checked')){
         $('.invisible').css("display","block");
       }
-      // 체크된 것이 있는지?
-      if ($('input:checkbox[name=chk]:checked').length > 0) {
-
-      }
 
       // 내부 순환
       let checkedSize = 0;
@@ -111,6 +107,8 @@
           checkedSize++;
           //console.log(checkedSize);
         }
+       // 체크 된 것만 골라라
+        console.log($('input:checkbox[name=chk]:checked'));
       });
 
     });

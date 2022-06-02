@@ -98,16 +98,16 @@
       // 내부 순환
       let checkedSize = 0;
       $('input[name=chk]:checkbox').each(function () {
-        console.log('!!!');
+       // console.log('!!!');
         console.log(this);
         // this.checked = true;
-        console.log($(this));
+          console.log($(this));
         // $(this).prop('checked', true);
 
         // 개별 체크
         if ($(this).is(':checked')) {
           checkedSize++;
-          console.log(checkedSize);
+        //  console.log(checkedSize);
         }
       });
 
