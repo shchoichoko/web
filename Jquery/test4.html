@@ -15,58 +15,111 @@
     button {
       width: 100px;
     }
+
+    #resetBtn {
+      width: 100px;
+    }
+
+    .container {
+      position: absolute;
+      top: 20%;
+      left: 43%;
+      display: inline-block;
+      border: 2px black solid;
+    }
+
+    td {
+      padding: 10px;
+    }
   </style>
-  <table border="1">
-    <tr>
-      <td>아이디</td>
-      <td colspan="2"><input type="text" name="" id="id"></td>
-    </tr>
-    <tr>
-      <td>비밀번호</td>
-      <td colspan="2"><input type="password" name="" id="pw"></td>
-    </tr>
-    <tr>
-      <td>성별</td>
-      <td><input type="radio" name="" id="male" value="남자">남자</td>
-      <td><input type="radio" name="" id="female" value="여자">여자</td>
-    </tr>
-    <tr>
-      <td>직업</td>
-      <td colspan="2"></td>
-    </tr>
-    <tr>
-      <td>취미</td>
-      <td colspan="2"><input type="checkbox" name="chk" id="hobby">개발
-        <input type="checkbox" name="chk" id="hobby" checked>게임
-        <input type="checkbox" name="chk" id="hobby">낚시
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td colspan="2"><input type="checkbox" name="chk" id="hobby">운동
-        <input type="checkbox" name="chk" id="hobby">독서
-        <input type="checkbox" name="chk" id="hobby">음악감상
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td><button id="button1">취소</button></td>
-      <td><button id="button2">회원가입</button></td>
-    </tr>
-  </table>
+  <div class="container">
+    <table border="0">
+      <tr>
+        <td>아이디</td>
+        <td colspan="2"><input type="email" name="" id="id"></td>
+      </tr>
+      <tr>
+        <td>비밀번호</td>
+        <td colspan="2"><input type="password" name="" id="password"></td>
+      </tr>
+      <tr>
+        <td>성별</td>
+        <td><input type="radio" name="sex" id="male" value="남자">남자</td>
+        <td><input type="radio" name="sex" id="female" value="여자">여자</td>
+      </tr>
+      <tr>
+        <td>직업</td>
+        <td colspan="2">
+          <select name="" id="job">
+            <option value="X" selected="selected" id="noSelect">하나 선택하세요</option>
+            <option value="warrior">Warrior</option>
+            <option value="thief">Thief</option>
+            <option value="cleric">Cleric</option>
+            <option value="ranger">Ranger</option>
+            <option value="archer">Archer</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>취미</td>
+        <td colspan="2"><input type="checkbox" name="chk" id="hobby">개발
+          <input type="checkbox" name="chk" id="hobby">게임
+          <input type="checkbox" name="chk" id="hobby">낚시
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td colspan="2"><input type="checkbox" name="chk" id="hobby">운동
+          <input type="checkbox" name="chk" id="hobby">독서
+          <input type="checkbox" name="chk" id="hobby">음악감상
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td style="padding-left: 33px;"><input type="reset" value="취소" id="resetBtn"></button></td>
+        <td colspan="2"><button id="button2">회원가입</button></td>
+      </tr>
+    </table>
+  </div>
   <script>
     let checkedSize = 0;
-    $('#button2').click(function(){
-      if ($('input:checkbox[name=chk]:checked').length < 3) {
-        alert('취미는 3개 이상 선택해야 합니다.')
+    let selectList = document.getElementById("job");
+    let $password = $("#password");
+    let check = true;
+    $('#id').click(function () {
+      alert('이메일 형식으로 작성하세요.');
+    });
+    $('#button2').click(function () {
+
+      if ($password.val().length < 5) {
+        alert('비밀번호는 5자리 이상입니다.');
+
+
+        if (!($("input:radio[name=sex]").is(":checked"))) {
+          alert('성별을 고르세요.');
+
+          if (selectList.options[selectList.selectedIndex].value == "X") {
+            alert('직업을 하나 고르세요');
+
+
+            if ($('input:checkbox[name=chk]:checked').length < 3) {
+              alert('취미는 3개 이상 선택해야 합니다.');
+
+            }
+            else {
+              alert('회원가입 완료');
+            }
+          }
+        }
       }
-    })
+
+    });
 
     $(function () {
 
 
-    })
+    });
   </script>
 </body>
 
