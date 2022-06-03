@@ -18,101 +18,108 @@
     td {
       border: 1px black solid;
     }
-    tr{
+
+    tr {
       height: 50px;
     }
+
     table {
       width: 600px;
     }
-    .invisible{
+
+    .invisible {
       display: none;
     }
-    .show{
+
+    .show {
       display: block;
     }
   </style>
   <form>
-  <table>
-    <tr>
-      <th>
-        <input type="checkbox" name="all" id="all">확인
-      </th>
-      <th>제목</th>
-      <th>글쓴시간</th>
-    </tr>
-    <tr>
-      <td><input type="checkbox" name="chk"></td>
-      <td><p class="invisible">호롤롤로</p></td>
-      <td>11:11:11</td>
-    </tr>
-    <tr>
-      <td><input type="checkbox" name="chk"></td>
-      <td><p class="invisible">fqqqqqqq</p></td>
-      <td>12:12:12</td>
-    </tr>
-    <tr>
-      <td><input type="checkbox" name="chk"></td>
-      <td><p class="invisible">aabbc</p></td>
-      <td>13:13:13</td>
-    </tr>
-    <tr>
-      <td><input type="checkbox" name="chk"></td>
-      <td><p class="invisible">renfkerjner</p></td>
-      <td>14:14:14</td>
-    </tr>
-    <tr>
-      <td><input type="checkbox" name="chk"></td>
-      <td><p class="invisible">5555</p></td>
-      <td>15:15:15</td>
-    </tr>
-    <tr>
-      <td><input type="checkbox" name="chk"></td>
-      <td><p class="invisible">6666</p></td>
-      <td>16:16:16</td>
-    </tr>
-  </table>
-  <div>
-    <input id="log_button" type="button" value="로그">
-  </div>
-</form>
+    <table>
+      <tr>
+        <th>
+          <input type="checkbox" name="all" id="all">확인
+        </th>
+        <th>제목</th>
+        <th>글쓴시간</th>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="chk"></td>
+        <td>
+          <p>호롤롤로</p>
+        </td>
+        <td>11:11:11</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="chk"></td>
+        <td>
+          <p>fqqqqqqq</p>
+        </td>
+        <td>12:12:12</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="chk"></td>
+        <td>
+          <p>aabbc</p>
+        </td>
+        <td>13:13:13</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="chk"></td>
+        <td>
+          <p>renfkerjner</p>
+        </td>
+        <td>14:14:14</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="chk"></td>
+        <td>
+          <p>5555</p>
+        </td>
+        <td>15:15:15</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="chk"></td>
+        <td>
+          <p>6666</p>
+        </td>
+        <td>16:16:16</td>
+      </tr>
+    </table>
+    <div>
+      <input id="log_button" type="button" value="로그">
+    </div>
+  </form>
   <script>
     // $('#log_button').val();  // value 값 읽기
     // $('#log_button').val('어쩌구');  // value 에 값 쓰기
-      $('#all').click(function () {
-
-        if ($('input:checkbox[name=chk]:checked').length === 6) {
-          $('input[name=chk]:checkbox').prop('checked', false);
-        } else {
-          $('input[name=chk]:checkbox').prop('checked', true);
-        }
-      })
-
-    $('#log_button').click(function () {
-      // input 태그 중에 checkbox 타입 중에 name 이 chk 인 것만 골라라
-      let $checkBoxes = $('input:checkbox[name=chk]');
-      //console.log(`체크박스 수 : ${$checkBoxes.length}`);
-
-      // 체크 된 것만 골라라
-      //console.log($('input:checkbox[name=chk]:checked').length);
-      if($('input:checkbox[name=chk]:checked')){
-        $('.invisible').css("display","block");
+    $('#all').click(function () {
+      if ($(this).prop('checked')) {
+        $("input[name=chk]").prop("checked", true);
+      } else {
+        $("input[name=chk]").prop("checked", false);
       }
-
-      // 내부 순환
-      let checkedSize = 0;
-      $('input[name=chk]:checkbox').each(function () {
-
-        // 개별 체크
-        if ($(this).is(':checked')) {
-          checkedSize++;
-          //console.log(checkedSize);
+    });
+    $('#log_button').click(function () {
+      if ($('input:checkbox[name=chk]:checked').length > 0) {
+        var checkbox = $("input[name=chk]:checked");
+        if ($('input[name=chk]:checked').length > 0) {
+          var checkbox = $("input[name=chk]:checked");
+          checkbox.each(function (i) {
+            let tr = checkbox.parent().parent().eq(i);
+            let tc = checkbox.closest('tr').eq(i);
+            let td = tr.children();
+            let subject = td.eq(1).text();
+            $('.allData').append("체크 항목 제목 : " + subject + "<br>");
+            console.log(subject);
+          });
+        } else {
+          alert('선택된 체크박스가 없습니다');
         }
-       // 체크 된 것만 골라라
-        console.log($('input:checkbox[name=chk]:checked'));
-      });
-
+      }
     });
   </script>
 </body>
 
-</html> 
+</html>
