@@ -1,0 +1,12 @@
+.container {
+  border: 2px black solid;
+  display: block;
+  position: relative;
+  height: 90vh;
+}
+#runner {
+  width: 180px;
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+}
