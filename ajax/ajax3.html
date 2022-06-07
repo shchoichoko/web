@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function loadDoc() {
+      console.log('start');
+
+      // 비동기 == 오래걸리는 동작
+      fetch('ajax_info.txt')
+      fetch('people.json')
+        // .then(function (response) {
+        //   return response.text();
+        // })
+
+        // 화살표 함수 (arrow function)
+        // 람다식 (lambda exepression)
+        .then(response => response.text())  // 기다렸다가 여기서 처리
+        .then(text => {                     // 기다렸다가 여기서 처리
+          console.log('!!!!!!');
+          document.getElementById('demo').innerHTML = text;
+        .then(response => response.json())  // 기다렸다가 여기서 처리
+        .then(json => {                     // 기다렸다가 여기서 처리
+          console.log(json);
+          let result = `${json.name} : ${json.skill}`;
+
+          document.getElementById('demo').innerHTML = result;
+          document.getElementById('json').innerHTML = JSON.stringify(json);
+        });
+
+      console.log('end');
+    }
+  </script>
+  <div id="demo"></div>
+  <div id="json"></div>
+  <button onclick="loadDoc()">get data</button>
+</body>
+
+</html>
