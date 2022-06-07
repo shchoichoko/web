@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+      #movie {
+        color: rgba(0, 0, 255, 0.507);
+        font-size: xx-large;
+        text-decoration: wavy;
+        text-align: center;
+      }
+      #vote {
+        background-color: cornflowerblue;
+        align-items: inline-block;
+        position: absolute;
+        left: 65%;
+        top: 20%;
+        font-size:xx-large;
+        padding: 5px;
+        width: 100px;
+        text-align: center;
+      }
+      #check {
+        background-color: cornflowerblue;
+        align-items: inline-block;
+        position: absolute;
+        left: 50%;
+        top: 20%;
+        font-size: xx-large;
+        padding: 5px;
+        width: 100px;
+        text-align: center;
+      }
+      #releaseDate {
+        align-items: inline-block;
+        position: relative;
+        left:20%;
+        top: 10%;
+        font-size: x-large;
+        text-align: center;
+      }
+      .poster {
+        align-items: inline-block;
+        position: relative;
+        width: 50%;
+        left: 20px;
+    }
+    .card {
+        align-items: inline-block;
+        display: flex;
+        width: 80%;
+        margin: 16px;
+        border-radius: 5px;
+        /* Add shadows to create the "card" effect */
+        box-shadow: 0 4px 8px 0 rgba(117, 93, 93, 0.2);
+        background-color: cadetblue;
+        transition: 0.3s;
+        font-size: x-large;
+        color: antiquewhite;
+      }
+      /* On mouse-over, add a deeper shadow */
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(56, 18, 18, 0.849);
+      }
+
+      /* Add some padding inside the card container */
+      .container {
+        padding: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      $(function () {
+        // javascript get parameter 정도로 검색
+        const queryString = window.location.search;
+        const parameters = new URLSearchParams(queryString);
+        const id = parameters.get("id");
+        // const name = parameters.get('name');
+        console.log(id);
+
+        fetch(
+          "https://api.themoviedb.org/3/movie/upcoming?api_key=a64533e7ece6c72731da47c9c8bc691f&language=ko-KR&page=1"
+        )
+          .then((response) => response.json())
+          .then((jsonArray) => {
+            let comments = $("#comments");
+            comments.append(`<div class="card" onclick="moveCommentsPage()
+    <div class="container">
+        <b><div id="movie">${jsonArray.results[id].title}</div><b>
+        <div>
+            <div id="releaseDate">개봉일 : ${jsonArray.results[id].release_date}</div>
+            <div id="check">✔  ${jsonArray.results[id].vote_count}</div>
+            <div id="vote">★  ${jsonArray.results[id].vote_average}</div>
+        </div>
+        <img src='https://image.tmdb.org/t/p/w500${jsonArray.results[id].poster_path}' class='poster'>
+        <p>${jsonArray.results[id].overview}</p>
+        </div>
+  </div>`);
+          });
+      });
+    </script>
+    
+    <ul id="comments"></ul>
+  </body>
+</html>
