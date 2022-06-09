@@ -14,7 +14,7 @@ public class Algo1 {
     String inputString = "";
     String result = "Hello ";
     for (int i = 0; i < howManyNumbers; i++) {
-      System.out.println("합치고 싶은 " + (i + 1) + "번째 문자를 입력해주세요.");
+      //System.out.println("합치고 싶은 " + (i + 1) + "번째 문자를 입력해주세요.");
       inputString = sc.nextLine();
       if (howManyNumbers > 0) {
         if (i != 0) {
