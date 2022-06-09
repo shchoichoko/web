@@ -23,6 +23,7 @@ public class Algo2 {
       double yVal = Math.pow((b - coordinate[i + 1]), 2); // y 좌표 거리
       System.out.println(getSilent(xVal, yVal, R)); // 소음 거리 판별해서 출력하기
     }
+    sc.close();
   }
 
   public static String getSilent(double xVal, double yVal, int R) {
