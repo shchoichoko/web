@@ -3,29 +3,35 @@ import java.util.Scanner;
 public class Algo1 {
 
   public static void main(String[] args) {
-    // 입력 받을 문자열 수와 문자열을 입력 받고 출력 포멧에 맞게 출력하세요.
-    System.out.println(resolve());
+    // 입력
+    Scanner sc = new Scanner(System.in);
+    // System.out.print("입력 수:");
+    int count = sc.nextInt();
+    String[] inputs = new String[count];
+    for (int i = 0; i < count; i++) {
+      // System.out.println("문자열[" + (i+1) + "] 입력 : ");
+      inputs[i] = sc.next();
+    }
+
+    // 실행
+    String result = answer(inputs);
+    // 출력
+    System.out.println(result);
+    sc.close();
   }
 
-  public static String resolve() {
-    Scanner sc = new Scanner(System.in);
-    System.out.println("몇 개의 문자열을 입력하시겠습니까?");
-    int howManyNumbers = Integer.parseInt(sc.nextLine());
-    String inputString = "";
-    String result = "Hello ";
-    for (int i = 0; i < howManyNumbers; i++) {
-      //System.out.println("합치고 싶은 " + (i + 1) + "번째 문자를 입력해주세요.");
-      inputString = sc.nextLine();
-      if (howManyNumbers > 0) {
-        if (i != 0) {
-          result += ",";
-        }
-        result += inputString;
+  // 문자열 결합
+  public static String answer(String[] inputs) {
+    StringBuffer result = new StringBuffer("Hello ");
+    for (int i = 0; i < inputs.length; i++) {
+      result.append(inputs[i]);
+      if (i == inputs.length - 1) {
+        result.append(".");
+      } else {
+        result.append(",");
       }
     }
-    result += ".";
-    sc.close();
-    return result;
+    return result.toString();
   }
 
 }
