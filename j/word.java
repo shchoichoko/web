@@ -5,6 +5,8 @@ public class Word {
 		Word word = new Word("Hello World");
 		System.out.println(word.isVowel(0));
 		System.out.println(word.isVowel(1));
+    System.out.println(word.isConsonant2(0));
+		System.out.println(word.isConsonant2(1));
 	}
 
 	private String letters;
@@ -26,4 +28,21 @@ public class Word {
 		return check;
 	}
 
+  // i 번째 글자가 자음인지 
+  public boolean isConsonant(int i){
+    boolean check = true;
+    String checkConsonant = letters.substring(i, i + 1);
+		if (checkConsonant.equals("a") || checkConsonant.equals("e")
+				|| checkConsonant.equals("i") || checkConsonant.equals("o")
+				|| checkConsonant.equals("u")) {
+			check = false;
+		}
+    return check;
+  }
+
+  public boolean isConsonant2(int i){
+    String checkConsonant = letters.substring(i, i + 1);
+    
+    return !("aeiou".contains(checkConsonant));
+  }
 }
