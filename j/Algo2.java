@@ -11,9 +11,7 @@ public class Algo2 {
     int a = sc.nextInt(); // 공사 현장 x좌표
     int b = sc.nextInt(); // 공사 현장 y좌표
     int R = sc.nextInt(); // 공사 현장 소음 거리
-    sc.nextLine();
     int N = sc.nextInt(); // 나무 그늘의 수
-    sc.nextLine();
     int[] coordinate = new int[N * 2]; // 좌표를 넣기 위한 배열 생성
     for (int i = 0; i < N * 2; i++) {
       coordinate[i] = sc.nextInt(); // 좌표를 배열에 넣어준다.
@@ -27,10 +25,10 @@ public class Algo2 {
   }
 
   public static String getSilent(double xVal, double yVal, int R) {
-    String result = "Noisy!!";
+    String result = "noisy";
 
     if ((xVal + yVal) >= Math.pow(R, 2)) {
-      result = "Silent!!";
+      result = "silent";
     }
 
     return result;
