@@ -13,7 +13,7 @@ public class Word {
 		this.letters = letters.toLowerCase();
 	}
 	
-	// i번째 글자가 모음인지 		//a, e ,i ,o ,u 
+	// i번째 글자가 모음인지 찾아내기		//a, e ,i ,o ,u 
 	public boolean isVowel(int i) {
 		boolean check = false;
 		
